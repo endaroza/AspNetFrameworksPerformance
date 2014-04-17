@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A6120D9-1F0C-4DE0-B249-140FBE30B5A9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NodeCs</RootNamespace>
+    <AssemblyName>NodeCs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClassWrapper">
+      <HintPath>..\packages\ClassWrapper.1.0.7\lib\net45\ClassWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="ConcurrencyHelpers">
+      <HintPath>..\packages\ConcurrencyHelpers.3.2.0\lib\net45\ConcurrencyHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="CoroutineCache">
+      <HintPath>..\packages\CoroutineCache.3.2.0\lib\net45\CoroutineCache.dll</HintPath>
+    </Reference>
+    <Reference Include="ExpressionBuilder">
+      <HintPath>..\packages\ExpressionBuilder.2.0.5\lib\net45\ExpressionBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="GenericHelpers">
+      <HintPath>..\packages\GenericHelpers.1.0.2\lib\net45\GenericHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="NetworkHelpers">
+      <HintPath>..\packages\NetworkHelpers.3.2.0\lib\net45\NetworkHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Node.Cs.Authorization">
+      <HintPath>..\packages\Node.Cs.Lib.1.1.0\lib\net45\Node.Cs.Authorization.dll</HintPath>
+    </Reference>
+    <Reference Include="Node.Cs.Cmd">
+      <HintPath>..\packages\Node.Cs.Cmd.1.1.0\lib\net45\Node.Cs.Cmd.exe</HintPath>
+    </Reference>
+    <Reference Include="Node.Cs.Commons">
+      <HintPath>..\packages\Node.Cs.Commons.1.1.0\lib\net45\Node.Cs.Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="Node.Cs.Lib">
+      <HintPath>..\packages\Node.Cs.Lib.1.1.0\lib\net45\Node.Cs.Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="Node.Cs.Routing">
+      <HintPath>..\packages\Node.Cs.Lib.1.1.0\lib\net45\Node.Cs.Routing.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UniversalTypeConverter">
+      <HintPath>..\packages\UniversalTypeConverter.1.0.2\lib\net40\UniversalTypeConverter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\MvcPerformanceController.cs" />
+    <Compile Include="Controllers\Person.cs" />
+    <Compile Include="Controllers\WebApiPerformance.cs" />
+    <Compile Include="GlobalNodeCs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\WebPage.cshtml" />
+    <None Include="node.config" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\ww.jquery.js" />
+    <Content Include="scripts\ww.jquery.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Bin\" />
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>-->
+  <!-- ADDED AFTER BUILD FOR NODE CS-->
+  <Target Name="AfterBuild">
+    <Exec Command="copy /Y $(TargetDir)*.dll $(ProjectDir)App_Bin">
+    </Exec>
+    <Exec Command="copy /Y $(TargetDir)*.exe $(ProjectDir)App_Bin">
+    </Exec>
+  </Target>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProjectDir)App_Bin\Node.Cs.Cmd.exe</StartProgram>
+    <StartArguments>-config "$(ProjectDir)node.config"</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProjectDir)App_Bin\Node.Cs.Cmd.exe</StartProgram>
+    <StartArguments>-config "$(ProjectDir)node.config"</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

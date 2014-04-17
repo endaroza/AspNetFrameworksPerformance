@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetFrameworksPerformance", "AspNetFrameworksPerformance\AspNetFrameworksPerformance.csproj", "{6353B830-F8F2-4581-8EB2-42D666012C2F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AFF746C8-440C-4EA1-8174-5D479A58C852}"
@@ -19,6 +17,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeliosSample", "HeliosSample\HeliosSample.csproj", "{FC61909E-38A4-43D0-8DCD-F0072B37B687}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfHost", "SelfHost\SelfHost.csproj", "{34289FCC-8A63-4CC1-8BFE-E1FDF65A81E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeCs", "NodeCs\NodeCs.csproj", "{2A6120D9-1F0C-4DE0-B249-140FBE30B5A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +41,10 @@ Global
 		{34289FCC-8A63-4CC1-8BFE-E1FDF65A81E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34289FCC-8A63-4CC1-8BFE-E1FDF65A81E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34289FCC-8A63-4CC1-8BFE-E1FDF65A81E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A6120D9-1F0C-4DE0-B249-140FBE30B5A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A6120D9-1F0C-4DE0-B249-140FBE30B5A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A6120D9-1F0C-4DE0-B249-140FBE30B5A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A6120D9-1F0C-4DE0-B249-140FBE30B5A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
