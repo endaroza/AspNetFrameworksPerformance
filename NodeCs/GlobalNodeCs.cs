@@ -11,10 +11,10 @@ namespace NodeCs
 		{
 			GlobalVars.RoutingService.AddStaticRoute("~/Content");
 			GlobalVars.RoutingService.AddStaticRoute("~/Scripts");
-			GlobalVars.RoutingService.AddRoute("~/api/{controller}/{action}/{id}",
+			GlobalVars.RoutingService.AddRoute("~/api/{action}/{id}",
 				new
 				{
-					Controller = "Home",
+					Controller = "WebApiPerformance",
 					Action = "Index",
 					Id = RoutingParameter.Optional
 				});
@@ -22,7 +22,7 @@ namespace NodeCs
 			GlobalVars.RoutingService.AddRoute("~/{controller}/{action}/{id}",
 				new
 				{
-					Controller = "Home",
+					Controller = "MvcPerformance",
 					Action = "Index",
 					Id = RoutingParameter.Optional
 				});

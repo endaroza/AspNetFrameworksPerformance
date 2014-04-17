@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -53,6 +54,7 @@ AbParse -i""InputFilePathOrWildCard"" -o""OutputFile"" -m""OutputMode""
             var files = Directory.GetFiles(path,fileName);
             var testInfoList = new List<TestInfo>();
 
+						var nfi = new NumberFormatInfo { CurrencyDecimalSeparator = "." };
             foreach (var file in files)
             {
                 var testInfo = new TestInfo();
@@ -71,7 +73,7 @@ AbParse -i""InputFilePathOrWildCard"" -o""OutputFile"" -m""OutputMode""
                         var req = StringUtils.ExtractString(line, ":", "[");
                         req = req.Trim();
                         decimal rps = 0;
-                        decimal.TryParse(req, out rps);
+                        decimal.TryParse(req, NumberStyles.Currency, nfi, out rps);
                         testInfo.RequestsPerSecond = rps;
                     }
                     if (line.StartsWith("   (Connect"))             

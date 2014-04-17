@@ -10,6 +10,7 @@ REM project with the same name's BIN\RELEASE folder.
 del *.txt
 del AbParseResults.*
 
+
 REM Warm up
 
 IISRESET
@@ -59,6 +60,27 @@ ab.exe -n40000 -c20 http://localhost:9000/ > SelfHost.txt
 
 ab.exe -n20 http://localhost:9000/test/HelloWorldJson/ 
 ab.exe -n40000 -c20 http://localhost:9000/test/HelloWorldJson/ > SelfHostJson.txt 
+
+REM *** IMPORTANT:
+REM In order to run these run StartNode from this dir as Administrator first
+
+ab.exe -n20 http://localhost:8081/api/HelloWorldCode/ 
+ab.exe -n40000 -c20 http://localhost:8081/api/HelloWorldCode/ > NodeCsWebApiStringResult.txt
+
+ab.exe -n20 http://localhost:8081/api/helloworldjson/ 
+ab.exe -n40000 -c20 http://localhost:8081/api/helloworldjson/ > NodeCswebapijsonTypedResult.txt 
+
+ab.exe -n20 http://localhost:8081/api/HelloWorldJsonCreateResponse/ 
+ab.exe -n40000 -c20 http://localhost:8081/api/HelloWorldJsonCreateResponse/ > NodeCsWebApiJsonHttpCreateResponse.txt 
+
+ab.exe -n20 http://localhost:8081/api/HelloWorldJsonManualResponse/ 
+ab.exe -n40000 -c20 http://localhost:8081/api/HelloWorldJsonManualResponse/ > NodeCsWebApiJsonManualResponse.txt 
+
+ab.exe -n20 -c20 http://localhost:8081/MvcPerformance/HelloWorldCode/
+ab.exe -n40000 -c20 http://localhost:8081/MvcPerformance/HelloWorldCode/ > NodeCsMvc.txt
+
+ab.exe -n20 http://localhost:8081/MvcPerformance/HelloWorldJson
+ab.exe -n40000 -c20 http://localhost:8081/MvcPerformance/HelloWorldJson > NodeCsMvcJson.txt
 
 abParse -i"*.txt" -o"AbParseResults.html" -m"html"
 abParse -i"*.txt" -o"AbParseResults.csv" -m"csv"
